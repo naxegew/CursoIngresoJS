@@ -1,0 +1,70 @@
+function mostrar() {
+
+	var numero;
+	var seguir;
+	var acumPos = 0;
+	var acumNeg = 0;
+	var contNeg = 0;
+	var contPos = 0;
+	var contCeros = 0;
+	var contPares = 0;
+	var promedioPos = 0;
+	var promedioNeg = 0;
+	var diferencia;
+
+
+	do {
+
+		numero = parseInt(prompt("Ingrese un numero: "));
+
+		// ------------ Signo -------------------
+		if (numero > 0) {
+			// positivos
+			acumPos = acumPos + numero;
+			contPos++;
+
+		}
+		else if (numero < 0) {
+			// negativos
+			acumNeg = acumNeg + numero;
+			contNeg++;
+
+		}
+		else {
+			// ceros
+			contCeros++;
+
+		}
+
+		//-----------------------------------
+
+		// numeros pares
+
+		if (numero % 2 == 0) {
+			contPares++;
+		}
+
+		seguir = prompt("Quiere continuar?");
+	} while (seguir == 's');
+
+
+	if (contPos != 0) {
+		promedioPos = acumPos / contPos;
+	}
+	if (contNeg != 0) {
+		promedioNeg = acumNeg / contNeg;
+	}
+
+	diferencia = contPos - contNeg;
+
+	document.write("1-Suma de los negativos: " + acumNeg + "<br>");
+	document.write("2-Suma de los positivos: " + acumPos + "<br>");
+	document.write("3-Cantidad de positivos: " + contPos + "<br>");
+	document.write("4-Cantidad de negativos: " + contNeg + "<br>");
+	document.write("5-Cantidad de ceros: " + contCeros + "<br>");
+	document.write("6-Cantidad de números pares: " + contPares + "<br>");
+	document.write("7-Promedio de positivos: " + promedioPos + "<br>");
+	document.write("8-Promedios de negativos: " + promedioNeg + "<br>");
+	document.write("Diferencia entre positivos y negativos: " + diferencia + "<br>");
+
+}//FIN DE LA FUNCIÓN
